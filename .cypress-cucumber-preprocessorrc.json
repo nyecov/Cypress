@@ -1,0 +1,21 @@
+{
+  "nonGlobalStepDefinitions": false,
+  "json": {
+    "enabled": true,
+    "output": "artifacts/json/cucumber_report.json",
+    "formatter": "node_modules/@deepakvishgwakarma/cucumber-json-formatter/lib/main.js"
+  },
+  "messages": {
+    "enabled": true,
+    "output": "artifacts/misc/cucumber-messages.ndjson"
+  },
+  "stepDefinitions": [
+    "cypress/e2e/step-definitions/**/*.{ts,js}",
+    "cypress/e2e/step-definitions/*.{ts,js}"
+  ],
+  "cucumber.features": ["cypress/e2e/features/**/*.feature", "cypress/e2e/features/*.feature"],
+  "cucumber.glue": ["cypress/e2e/step-definitions/*.ts"],
+  "pretty": {
+    "enabled": true
+  }
+}

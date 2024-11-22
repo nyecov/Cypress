@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "module": "ESNext",
+    "target": "ES2022",
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["ES2022", "dom"],
+    "types": [
+      "cypress",
+      "node",
+      "@badeball/cypress-cucumber-preprocessor",
+    ],
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "importHelpers": true,
+  }
+}
