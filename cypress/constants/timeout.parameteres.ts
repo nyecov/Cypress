@@ -1,0 +1,1 @@
+export const NORMAL_TIMEOUT = 15000;

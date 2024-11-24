@@ -2,6 +2,7 @@ import { addCucumberPreprocessorPlugin } from '@badeball/cypress-cucumber-prepro
 import webpack from '@cypress/webpack-preprocessor';
 import { defineConfig } from 'cypress';
 import cypressOnFix from 'cypress-on-fix';
+import path from 'path';
 
 const setupNodeEvents = async (
   cyOn: Cypress.PluginEvents,
@@ -16,6 +17,12 @@ const setupNodeEvents = async (
       webpackOptions: {
         resolve: {
           extensions: ['.ts', '.js'],
+          alias: {
+            '@page-objects': path.resolve('cypress/e2e/page-objects/'),
+            '@page-elements': path.resolve('cypress/e2e/page-elements/'),
+            '@custom-types': path.resolve('cypress/types/index'),
+            '@constants': path.resolve('cypress/constants/index'),
+          },
         },
         module: {
           rules: [

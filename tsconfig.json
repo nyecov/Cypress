@@ -21,5 +21,11 @@
     "emitDecoratorMetadata": true,
     "baseUrl": ".",
     "importHelpers": true,
+    "paths": {
+      "@page-objects/*": ["cypress/e2e/page-objects/*"],
+      "@page-elements/*": ["cypress/e2e/page-elements/*"],
+      "@custom-types": ["cypress/types/index"],
+      "@constants": ["cypress/constants/index"]
+    }
   }
 }

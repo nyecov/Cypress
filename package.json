@@ -9,7 +9,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^13.16.0"
+    "cypress": "^13.16.0",
+    "cypress-selectors": "^1.0.2"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
