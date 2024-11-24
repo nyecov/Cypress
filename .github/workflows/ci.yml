@@ -32,7 +32,7 @@ jobs:
 
     # Run the test suite inside the container
     - name: Run tests inside Docker
-      run: docker run --rm my-app-image npm test # or your test command inside Docker
+      run: docker run --rm my-app-image npm test
 
     # Optional: Clean up any images after the job
     - name: Clean up Docker images
