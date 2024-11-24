@@ -1,0 +1,39 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:19.03.12
+        options: --privileged
+
+    steps:
+    # Checkout the repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Docker
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    # Build the Docker image
+    - name: Build Docker image
+      run: docker build -t my-app-image .
+
+    # Run the test suite inside the container
+    - name: Run tests inside Docker
+      run: docker run --rm my-app-image npm test # or your test command inside Docker
+
+    # Optional: Clean up any images after the job
+    - name: Clean up Docker images
+      run: docker rmi my-app-image

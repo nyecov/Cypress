@@ -1,14 +1,16 @@
-FROM cypress/browsers:node-22.11.0-chrome-131.0.6778.69-1-ff-132.0.2-edge-131.0.2903.51-1
+FROM cypress/included:13.11.0
+RUN apt-get update -y
+RUN apt-get upgrade -y
 
-RUN mkdir /CypresTest
-
-WORKDIR /CypresTest
+WORKDIR /e2e
+COPY . .
 
 COPY ./package.json .
-COPY ./cypress.json .
+COPY ./.cypress-cucumber-preprocessorrc.json .
+COPY ./cypress.config.ts .
 COPY ./cypress ./cypress
 
 RUN npm install
 
-ENTRYPOINT [ "npx","cypress","run" ]
-CMD [""]
+
+CMD ["npx", "cypress", "run"]
